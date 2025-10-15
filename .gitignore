@@ -1,0 +1,27 @@
+# === IntelliJ IDEA ===
+.idea/
+*.iml
+out/
+
+# === Maven ===
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# === Logs ===
+*.log
+
+# === Sistema ===
+.DS_Store
+
+# === Credenciales locales ===
+src/main/resources/application.properties
+
+# === Archivooc compiladoor / temporarios ===
+*.class
+*.jar
+*.war
+*.ear
+
+# === Otras carpetas temporarias ===
+bin/
+build/
