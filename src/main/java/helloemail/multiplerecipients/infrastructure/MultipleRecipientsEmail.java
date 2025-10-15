@@ -21,8 +21,9 @@ public class MultipleRecipientsEmail {
 
     @PostMapping("/sendSimpleMail")
     public String sendSimpleMail(@RequestBody EmailRequest request) {
-        multiplerecipientsapp.sendEmail(request.getTo(), request.getSubject(), request.getBody());
-        return "OK: simple mail enviado";
+        String[] recipients = request.getTo().split(";");
+        multiplerecipientsapp.sendEmail(recipients, request.getSubject(), request.getBody());
+        return "OK: multiple recipients mail enviado";
     }
 }
 
