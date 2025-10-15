@@ -1,8 +1,7 @@
-package helloemail.simpleemail.infrastructure.api;
+package helloemail.multiplerecipients.infrastructure;
 
 import helloemail.common.infrastructure.requests.EmailRequest;
 import helloemail.multiplerecipients.application.MultipleRecipientsApp;
-import helloemail.simpleemail.application.SimpleEmailApp;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
