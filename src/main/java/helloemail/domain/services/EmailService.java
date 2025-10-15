@@ -1,8 +1,7 @@
-package helloemail.service;
+package helloemail.domain.services;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -11,10 +10,7 @@ import org.springframework.stereotype.Service;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.Paths;
 
 @Service
 public class EmailService {
@@ -29,16 +25,6 @@ public class EmailService {
 
     public EmailService(JavaMailSender mailSender) {
         this.mailSender = mailSender;
-    }
-
-    // --- texto simples (1 destinatário)
-    public void sendEmail(String to, String subject, String body) {
-        SimpleMailMessage msg = new SimpleMailMessage();
-        msg.setFrom(fromAddress);
-        msg.setTo(to);
-        msg.setSubject(subject);
-        msg.setText(body);
-        mailSender.send(msg);
     }
 
     // --- texto simples (N destinatários)
