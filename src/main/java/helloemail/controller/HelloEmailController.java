@@ -14,11 +14,7 @@ public class HelloEmailController {
         this.emailService = emailService;
     }
 
-    @PostMapping("/sendSimpleMail")
-    public String sendSimpleMail(@RequestBody EmailRequest request) {
-        emailService.sendEmail(request.getTo(), request.getSubject(), request.getBody());
-        return "OK: simple mail enviado";
-    }
+
 
     @PostMapping("/sendToMultipleRecipients")
     public String sendToMultipleRecipients(@RequestBody EmailRequest request) {
