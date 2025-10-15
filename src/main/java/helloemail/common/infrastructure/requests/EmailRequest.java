@@ -1,4 +1,4 @@
-package helloemail.infrastructure.common.requests;
+package helloemail.common.infrastructure.requests;
 
 
 import lombok.Data;

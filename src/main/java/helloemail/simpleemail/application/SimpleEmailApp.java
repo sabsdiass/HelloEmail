@@ -1,6 +1,6 @@
-package helloemail.application;
+package helloemail.simpleemail.application;
 
-import helloemail.domain.services.SimpleEmailService;
+import helloemail.simpleemail.domain.services.SimpleEmailService;
 import org.springframework.stereotype.Component;
 
 @Component

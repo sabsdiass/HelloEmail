@@ -1,4 +1,4 @@
-package helloemail.domain.services;
+package helloemail.simpleemail.domain.services;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;

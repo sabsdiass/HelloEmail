@@ -1,4 +1,4 @@
-package helloemail.domain.services;
+package helloemail.simpleemail.domain.services;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
@@ -28,14 +28,7 @@ public class EmailService {
     }
 
     // --- texto simples (N destinatários)
-    public void sendToMultipleRecipients(String[] to, String subject, String body) {
-        SimpleMailMessage msg = new SimpleMailMessage();
-        msg.setFrom(fromAddress);
-        msg.setTo(to);
-        msg.setSubject(subject);
-        msg.setText(body);
-        mailSender.send(msg);
-    }
+
 
     // --- HTML (N destinatários)
     public void sendHTMLMessage(String[] to, String subject, String htmlBody) {

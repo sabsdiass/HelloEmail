@@ -1,7 +1,7 @@
-package helloemail.infrastructure.api;
+package helloemail.simpleemail.infrastructure.api;
 
-import helloemail.application.SimpleEmailApp;
-import helloemail.infrastructure.common.requests.EmailRequest;
+import helloemail.simpleemail.application.SimpleEmailApp;
+import helloemail.common.infrastructure.requests.EmailRequest;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,3 +25,5 @@ public class SimpleEmail {
         return "OK: simple mail enviado";
     }
 }
+
+// fazer um arquivo desses pra cada um dos métodos.
