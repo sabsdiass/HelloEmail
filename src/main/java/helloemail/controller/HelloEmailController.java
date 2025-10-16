@@ -20,32 +20,5 @@ public class HelloEmailController {
     // probar (reto), coger la estructura y transformarla de tal manera que el primer nivel sea una
     //carpeta llamada simpleMain, crear 3 carpetas, app, infra y domain. ellas ya estan creadas
 
-    @PostMapping("/sendToMultipleRecipients")
-    public String sendToMultipleRecipients(@RequestBody EmailRequest request) {
-        String[] recipients = request.getTo().split("\\s*,\\s*"); // separa por vírgula e ignora espaços
-        emailService.sendToMultipleRecipients(recipients, request.getSubject(), request.getBody());
-        return "OK: múltiplos destinatários";
-    }
-
-    @PostMapping("/sendHTMLMessage")
-    public String sendHTMLMessage(@RequestBody EmailRequest request) {
-        String[] recipients = request.getTo().split("\\s*,\\s*");
-        emailService.sendHTMLMessage(recipients, request.getSubject(), request.getBody());
-        return "OK: HTML mail enviado";
-    }
-
-    @PostMapping("/sendWithAttachment")
-    public void sendWithAttachment(@RequestBody EmailRequest request)
-            throws jakarta.mail.MessagingException, java.io.IOException {
-
-        String htmlContent = "<h1>This is a NEW test Spring Boot email</h1>"
-                + "<p>It can contain <strong>HTML</strong> content.</p>";
-
-        emailService.sendWithAttachment(
-                request.getTo(),
-                request.getSubject(),
-                htmlContent
-        );
-    }
 
 }

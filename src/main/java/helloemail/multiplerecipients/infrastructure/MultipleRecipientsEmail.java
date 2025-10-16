@@ -19,11 +19,11 @@ public class MultipleRecipientsEmail {
        this.multiplerecipientsapp = multiplerecipientsapp;
     }
 
-    @PostMapping("/sendSimpleMail")
-    public String sendSimpleMail(@RequestBody EmailRequest request) {
-        String[] recipients = request.getTo().split(";");
+    @PostMapping("/sendToMultipleRecipients")
+    public String sendToMultipleRecipients(@RequestBody EmailRequest request) {
+        String[] recipients = request.getTo().split("\\s*,\\s*"); // separa por vírgula e ignora espaços
         multiplerecipientsapp.sendEmail(recipients, request.getSubject(), request.getBody());
-        return "OK: multiple recipients mail enviado";
+        return "OK: múltiplos destinatários";
     }
 }
 
